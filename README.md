@@ -40,3 +40,4 @@ User Story #15: My calculator should have several decimal places of precision wh
 
 Note On Calculator Logic: It should be noted that there are two main schools of thought on calculator input logic: immediate execution logic and formula logic. Our example utilizes formula logic and observes order of operation precedence, immediate execution does not. Either is acceptable, but please note that depending on which you choose, your calculator may yield different results than ours for certain equations (see below example). As long as your math can be verified by another production calculator, please do not consider this a bug.
 # FreeCodeCamp-Javascript-Calculator
+# Javascript-Calculator
