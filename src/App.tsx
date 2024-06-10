@@ -1,17 +1,23 @@
 /* eslint-disable no-eval */
 import { useState } from "react";
 
-function App() {
-  const [input, setInput] = useState("0");
-  const [isDecimal, setIsDecimal] = useState(false);
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
-  const operators = ["-", "+", "*", "/"];
+function App(): JSX.Element {
+  const [input, setInput] = useState<string>("0");
+  const [isDecimal, setIsDecimal] = useState<boolean>(false);
 
-  const getLastLetter = () => {
+  const operators: string[] = ["-", "+", "*", "/"];
+
+  const getLastLetter = (): string => {
     return input.toString().slice(-1);
   };
 
-  const handleClick = (value: string) => {
+  const handleClick = (value: string): void => {
     if (input === "0") {
       setInput("");
     }
@@ -79,21 +85,40 @@ function App() {
   ];
 
   return (
-    <div className="calculator">
-      <div id="display">{input}</div>
+    <Card
+      sx={{
+        textAlign: "center",
+        margin: "auto",
+        maxWidth: 400,
+      }}
+    >
+      <CardContent>
+        <Typography
+          variant="h5"
+          id="display"
+          mb={2}
+          bgcolor={(theme) => theme.palette.grey[300]}
+        >
+          {input}
+        </Typography>
 
-      <div className="buttons">
-        {buttons.map((button, id) => (
-          <button
-            key={id}
-            id={button.id}
-            onClick={() => handleClick(button.value)}
-          >
-            {button.value}
-          </button>
-        ))}
-      </div>
-    </div>
+        <Grid container spacing={2}>
+          {buttons.map((button, id) => (
+            <Grid item xs={4} key={id}>
+              <Button
+                id={button.id}
+                fullWidth
+                variant="contained"
+                color="primary"
+                onClick={() => handleClick(button.value)}
+              >
+                {button.value}
+              </Button>
+            </Grid>
+          ))}
+        </Grid>
+      </CardContent>
+    </Card>
   );
 }
 
