@@ -2,6 +2,8 @@
 
 ## This is the solution to [FreeCodeCamp Front End Libraries Projects - Build a JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator)
 
+## You can see live demo [here](https://free-code-camp-javascript-calculator.vercel.app/)
+
 Objective: Build an app that is functionally similar to this: https://javascript-calculator.freecodecamp.rocks/.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
